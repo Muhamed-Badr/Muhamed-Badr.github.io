@@ -1,0 +1,117 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+:root{
+    --bgColor : #080e1c;
+    --TextWhite : #fff;
+}
+.white-theme{
+    --bgColor : #fff;
+    --TextWhite : #080e1c;
+}
+.hero{
+    background: var(--bgColor);
+    height: 100vh;
+}
+.hero header nav{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.hero header nav .logo{
+    color: var(--TextWhite);
+    font-size: 35px;
+    font-weight: bold;
+}
+.hero header nav .logo span{
+    color: #23a3fe;
+}
+.hero header nav .nav-links a{
+    color: var(--TextWhite);
+    margin: 0 30px;
+    transition: 0.3s;
+}
+.hero header nav .nav-links a:hover{
+    color: #23a3fe;
+}
+.hero header nav .btn-mode{
+    color: var(--TextWhite);
+    font-size: 25px;
+    cursor: pointer;
+}
+.hero .contanier{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+    height: calc(100vh - 100px);
+    position: relative;
+}
+.hero .contanier .div-text{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+}
+.hero .contanier .div-img{
+    position: absolute;
+    width: 34%;
+    bottom: 0px;
+    margin-right: 50px;
+}
+.hero .contanier .div-img img{
+    width: 100%;
+}
+.hero .contanier .div-text h1{
+    color: var(--TextWhite);
+    font-size: 60px;
+    margin: 15px 0 10px;
+}
+.hero .contanier .div-text span{
+    color: #23a3fe;
+    font-size: 25px;
+    font-weight: bold;
+}
+.hero .contanier .div-text p{
+    color: var(--TextWhite);
+    line-height: 1.8;
+    margin:  20px 0 40px;
+}
+.hero .contanier .div-text .btn{
+    color: #fff;
+    background: #23a3fe;
+    padding:  15px 30px;
+    border:  1px solid #23a3fe;
+    position: relative;
+    top: 0;
+    transition: 0.3s;
+}
+.hero .contanier .div-text .btn:hover{
+    top: -8px;
+    box-shadow: 0 0 15px #23a3fe;
+}
+.social-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right:  -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.social-icon a{
+    color: #23a3fe;
+    font-size: 25px;
+    transition: 0.3s;
+}
+.social-icon a:hover{
+    transform: scale(1.3);
+}
