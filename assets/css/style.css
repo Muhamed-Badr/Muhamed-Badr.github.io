@@ -1,0 +1,654 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+    text-decoration: none;
+}
+
+:root {
+    /* =================== COLOR =================== */
+    --bg-Color: #1D2026;
+    --bg-Color-lighter: #242830;
+    --bg-Color-Nav: rgba(36, 40, 48, 0.95);
+    --Text-Color: #fff;
+    --blue-Color: #0270D7;
+    --blue-Color-2nd: #0Fa0ff;
+
+    /* =================== FONT =================== */
+    --h1-font-size: 3rem;
+    --h2-font-size: 2.25rem;
+    --h3-font-size: 1.75rem;
+    --h4-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --letter-spacing: 0.125rem;
+
+}
+
+.light-theme {
+    --bg-Color: #e9f3ff;
+    --bg-Color-Nav: rgba(255, 255, 255, 0.95);
+    --Text-Color: #1D2026;
+}
+/* 
+html {
+    scroll-behavior: smooth;
+} */
+
+body,
+html {
+    background-color: var(--bg-Color);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+
+header nav {
+    height: 75px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--bg-Color-Nav);
+    padding: 20px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+
+header nav .logo {
+    font-size: var(--h3-font-size);
+    font-weight: bold;
+    letter-spacing: var(--letter-spacing);
+    color: var(--Text-Color);
+    position: relative;
+}
+
+header nav .logo span {
+    color: var(--blue-Color);
+}
+
+header nav .nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center; /* Vertically center the links */
+    margin-left: auto; /* Push links to the right */
+}
+
+header nav .nav-links a {
+    color: var(--Text-Color);
+    font-size: var(--h4-font-size);
+    font-weight: 300;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* ================== Light/Dark Mode Button Styles ================== */
+header nav .nav-links .btn-mode {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 20%; /* Round shape */
+    background-color: rgba(36, 40, 48, 0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    cursor: pointer; /* Pointer cursor for clickable */
+}
+
+header nav .nav-links .btn-mode .glass-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+    background-color: rgba(255, 255, 255, 0.1); /* Glass-like effect */
+    pointer-events: none;
+}
+
+header nav .nav-links .btn-mode .btn-mode-icon {
+    font-size: var(--h4-font-size);
+    /* Adjust the icon size */
+    transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    /* Smooth transitions */
+}
+
+/* Sun Icon (Light Mode) */
+header nav .nav-links .btn-mode .ri-sun-line {
+    color: #FFDD57;
+    /* Light yellow sun color */
+}
+
+/* Moon Icon (Dark Mode) */
+header nav .nav-links .btn-mode .ri-moon-line {
+    color: #BCC2C8;
+    /* Light gray moon color */
+    text-shadow: 0 0 10px rgba(188, 194, 200, 0.6);
+    /* Subtle glow effect */
+}
+
+/* Hover effect for nav links */
+header nav .nav-links a:hover {
+    color: var(--blue-Color);
+}
+
+header nav .nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--blue-Color);
+    transition: 0.3s ease;
+}
+
+header nav .nav-links a:hover::before {
+    width: 100%;
+}
+
+/* Sun Icon (Light Mode) Hover Effect */
+header nav .nav-links .btn-mode:hover .ri-sun-line {
+    color: #FFD700;
+    /* Bright yellow on hover */
+    transform: rotate(20deg) scale(1.2);
+    /* Slight rotation and scaling on hover */
+    filter: drop-shadow(0 0 7px #ffdd57);
+    /* Glow effect */
+}
+
+/* Moon Icon (Dark Mode) Hover Effect */
+header nav .nav-links .btn-mode:hover .ri-moon-line {
+    color: #D6D6D6;
+    /* Brighter gray on hover */
+    transform: rotate(20deg) scale(1.2);
+    /* Slight rotation and scaling */
+    filter: drop-shadow(0 0 7px rgba(188, 194, 200, 0.7));
+    /* Glow effect */
+}
+
+/**! ========================================== HOME SECTION ========================================== */
+main #home {
+    height: 100vh;
+    width: 100%;
+}
+
+main #home .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Particles.js Background */
+main #home .container #particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind everything */
+}
+
+/* Content Layer */
+main #home .container #content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 95px 5% 0;
+    z-index: 2; /* On top of particles */
+    display: flex; /* justify-content: center; */
+    align-items: center;
+    pointer-events: none; /* Make content layer invisible to mouse events */
+    color: var(--Text-Color);
+}
+
+main #home .container #content .left {
+    flex: 1;
+    pointer-events: all; /* Allow interactions for the name and CV */
+    width: fit-content;
+}
+
+main #home .container #content .right {
+    text-align: right;
+    pointer-events: all; /* Ensure interaction for the image */
+    width: 450px;
+    height: 450px;
+    background-image: linear-gradient(to right bottom, var(--blue-Color), #000); /* img background color */
+    border-radius: 39% 56% 61% 39% / 32% 44% 53% 58%;
+    overflow: hidden;
+}
+
+main #home .container #content .left p {
+    font-size: var(--h4-font-size);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+main #home .container #content .left p span {
+    background-color: var(--blue-Color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+main #home .container #content .left h1 {
+    font-size: var(--h1-font-size);
+    font-weight: bold;
+}
+
+main #home .container #content .left h3 {
+    font-size: var(--h3-font-size);
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: var(--blue-Color);
+}
+
+main #home .container #content .left .action-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+main #home .container #content .left .action-container .download-btn {
+    padding: 10px 20px;
+    background-color: var(--blue-Color);
+    color: var(--Text-Color);
+    border-radius: 5px;
+    font-size: var(--h4-font-size);
+    pointer-events: all;
+    transition: 0.5s ease;
+    /* Smooth transition */
+    border: 2px solid transparent;
+    /* Invisible border initially */
+    border-radius: 40px;
+    /* Button is clickable */
+}
+
+main #home .container #content .left .action-container .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+main #home .container #content .left .action-container .social-icons a {
+    /* font-size: 30px; */
+    font-size: var(--h3-font-size);
+    color: var(--blue-Color);
+    transition: scale 0.3s ease;
+}
+
+main #home .container #content .left .action-container .social-icons a:hover {
+    scale: 1.25;
+}
+
+main #home .container #content .left .download-btn:hover {
+    background-color: var(--bg-Color);
+    /* Background changes on hover */
+    border: 2px solid var(--blue-Color);
+    /* Blue border appears on hover */
+    transition: 0.5s ease;
+    /* Transition timing */
+}
+
+main #home .container #content .right img {
+    max-width: 100%;
+}
+
+main #home .container .scroll-down {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+main #home .container .scroll-down .mouse-wrapper {
+    color: var(--Text-Color);
+    font-size: var(--small-font-size);
+    display: block;
+    margin: auto;
+    max-width: 100px;
+    text-align: center;
+}
+
+main #home .container .scroll-down .mouse-wrapper .mouse {
+    border: 2px solid var(--Text-Color);
+    display: block;
+    height: 1.75rem;
+    width: 1.25rem;
+    margin: auto;
+    margin-top: 0.75rem;
+    border-radius: 1.25rem;
+    position: relative;
+}
+
+main #home .container .scroll-down .mouse-wrapper .mouse .wheel {
+    background-color: var(--Text-Color);
+    border-radius: 50%;
+    width: 0.25rem;
+    height: 0.25rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 40%;
+    display: block;
+    animation: ani-mouse 2s linear infinite;
+}
+
+@keyframes ani-mouse {
+    0% {
+        top: 29%;
+    }
+
+    15% {
+        top: 50%;
+    }
+
+    50% {
+        top: 50%;
+    }
+
+    100% {
+        top: 29%;
+    }
+}
+/* mouse scroll arrows animation
+main #home .container .scroll-down .mouse-wrapper .m_scroll_arrows {
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    -ms-transform: rotate(45deg);
+    IE 9
+    -webkit-transform: rotate(45deg);
+    Chrome, Safari, Opera
+    transform: rotate(45deg);
+
+    border-right: 1.5px solid var(--Text-Color);
+    border-bottom: 1.5px solid var(--Text-Color);
+    margin: auto;
+
+    width: 0.65rem;
+    height: 0.65rem;
+}
+
+.one,
+.two,
+.three {
+    -webkit-animation: mouse-scroll 2s infinite;
+    -moz-animation: mouse-scroll 2s infinite;
+    animation: mouse-scroll 2s infinite;
+
+}
+
+.one {
+    -webkit-animation-delay: .1s;
+    -moz-animation-delay: .1s;
+    -webkit-animation-direction: alternate;
+
+    animation-direction: alternate;
+    animation-delay: alternate;
+}
+
+.two {
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    -webkit-animation-direction: alternate;
+
+    animation-delay: .4s;
+    animation-direction: alternate;
+
+    margin-top: -6px;
+}
+
+.three {
+    -webkit-animation-delay: .6s;
+    -moz-animation-delay: .6s;
+    -webkit-animation-direction: alternate;
+
+    animation-delay: .6s;
+    animation-direction: alternate;
+
+
+    margin-top: -6px;
+}
+@-webkit-keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+
+/**! ========================================== ABOUT SECTION ========================================== */
+main #about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main #about .container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main #about .container .title {
+    width: fit-content;
+    margin-bottom: 6rem;
+}
+
+main #about .container .title h1 {
+    font-size: var(--h1-font-size);
+    color: var(--Text-Color);
+    letter-spacing: var(--letter-spacing);
+}
+
+main #about .container .title h1 span {
+    color: var(--blue-Color);
+}
+
+main #about .container #content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 3rem;
+}
+
+main #about .container #content .left {
+    width: 350px;
+    height: 350px;
+    border-radius: 20%;
+    overflow: hidden;
+}
+main #about .container #content .left img {
+    max-width: 100%;
+}
+
+main #about .container #content .right .row-1 h3 {
+    font-size: var(--h3-font-size);
+    color: var(--blue-Color);
+    margin-bottom: 20px;
+}
+
+main #about .container #content .right .row-1 h3 span {
+    color: var(--blue-Color-2nd);
+}
+
+main #about .container #content .right .row-1 p {
+    color: var(--Text-Color);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+main #about .container #content .right hr {
+    width: 80%;
+    height: 2px;
+    border: none;
+    border-radius: 50px;
+    margin: 0 auto;
+    background-color: var(--blue-Color);
+}
+
+main #about .container #content .right .row-2 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main #about .container #content .right .row-2 p {
+    color: var(--Text-Color);
+    margin-bottom: 20px;
+}
+
+
+/**! ========================================== SKILLS SECTION ========================================== */
+main #skills {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #skills .container {
+    width: 100%;
+    height: 50%;
+    /* background-color: skyblue; */
+}
+
+main #skills .container .title {
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+main #skills .container .title h1 {
+    font-size: var(--h1-font-size);
+    color: var(--Text-Color);
+    letter-spacing: var(--letter-spacing);
+}
+
+main #skills .container .title h1 span {
+    color: var(--blue-Color);
+}
+
+
+main #skills .container #content {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+}
+
+main #skills .container #content .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+}
+
+main #skills .container #content .row .item {
+    color: #fff;
+    background-color: #494949;
+    background-image: linear-gradient(to right bottom, var(--blue-Color), var(--blue-Color-2nd)); /* img background color */
+    margin: 20px;
+    padding: 1rem;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+main #skills .container #content .row .item:hover {
+    scale: 1.1;
+}
+
+main #skills .container #content .row .item img {
+    max-width: 70px;
+}
+
+
+/*========== Media Queries ==========*/
+/* @media only screen and (max-width:1200px) {}
+
+@media only screen and (max-width:968px) {}
+
+@media only screen and (max-width:768px) {}
+
+@media only screen and (max-width:576px) {}
+
+@media only screen and (max-width:320px) {} */
