@@ -1,3 +1,4 @@
 # Ignore specified dir
 .vscode/
 old-one/
+other-img/
