@@ -318,7 +318,7 @@ import * as all from './app.js';
     /* ===================== GOOGLE SHEETS INTEGRATION WITH SPINNER AND POPUP ===================== */
     // Function to send form data to Google Sheets
     function sendDataToGoogleSheets() {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzxIqgSmIZ6EDhUxLfl26cpW2OMDFRk6Sdl81gsJnvuXQ_3KH6OKWzDNpopKidBmPlNzQ/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzYMxyq4P8USdLJ0ONEkn2uwxer6FafoWKIihg-9SbSITvJfSw9vyFyutldaGsUBhYO1g/exec';
         const form = document.querySelector("form");
         const formData = new FormData(form);
 
