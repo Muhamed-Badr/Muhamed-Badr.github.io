@@ -257,9 +257,10 @@ import * as all from './app.js';
             }
 
             function checkMessage() { //checkMessage function
-                // let messagePattern = /^(?=.{3,})(?=.{0,500}$)[\s\S]*$/; //messagePattern to validate message
-                let messagePattern = new RegExp(`^(?=.{3,})(?=.{0,${mMaxChars}}$)[\\s\\S]*$`);  //messagePattern to validate message
-                if (!mInput.value.match(messagePattern)) { //if messagePattern not matched then add error and remove valid class
+                let messagePattern = /^(?=.{3,})[\s\S]*$/; //messagePattern to validate message
+                // let messagePattern = /^(?=.{3,})(?=.{0,500}$)[\s\S]*$/; //messagePattern to validate message (doesn't support '\n')
+                // let messagePattern = new RegExp(`^(?=.{3,})(?=.{0,${mMaxChars}}$)[\\s\\S]*$`);  //messagePattern to validate message (doesn't support '\n')
+                if (!mInput.value.match(messagePattern) || mCurrentLength > mMaxChars) { //if messagePattern not matched then add error and remove valid class
                     mField.classList.add("error");
                     mField.classList.remove("valid");
                     let errorTxt = mField.querySelector(".error-txt");
